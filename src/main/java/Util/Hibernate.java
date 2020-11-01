@@ -1,4 +1,5 @@
 package Util;
+
 import java.util.Properties;
 
 import Models.Customer;
@@ -11,10 +12,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
+
 public class Hibernate {
     private static SessionFactory sessionFactory;
-    public static SessionFactory getSessionFactory(){
-        try{
+
+    public static SessionFactory getSessionFactory() {
+        try {
             PropertiesConfiguration applicationProperties = new PropertiesConfiguration();
             applicationProperties.load("application.properties");
             Configuration configuration = new Configuration();
@@ -25,7 +28,7 @@ public class Hibernate {
             properties.put(Environment.PASS, applicationProperties.getString("dbPassword"));
             properties.put(Environment.SHOW_SQL, "true");
             properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
-            properties.put(Environment.HBM2DDL_AUTO, "create-drop");
+//            properties.put(Environment.HBM2DDL_AUTO, "create-drop");
             properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
             configuration.setProperties(properties);
             // all entities need to be registered
@@ -36,9 +39,9 @@ public class Hibernate {
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return  sessionFactory;
+        return sessionFactory;
     }
 }

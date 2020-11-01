@@ -3,7 +3,7 @@ package Util;
 import java.util.*;
 
 
-public interface Dao<T> {
+public interface IDao<T> {
 
     Optional<T> get(long id);
 
