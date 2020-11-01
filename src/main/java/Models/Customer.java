@@ -2,19 +2,24 @@ package Models;
 
 import Enums.Gender;
 
+import java.util.Date;
+
 public class Customer {
     private int customerId;
     private String customerName;
     private String customerSurname;
     private String address;
     private Gender gender;
+    private Date birthDate;
 
-    public Customer(int customerId, String customerName, String customerSurname, String address, Gender gender) {
+
+    public Customer(int customerId, String customerName, String customerSurname, String address, Gender gender, Date birthDate) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerSurname = customerSurname;
         this.address = address;
         this.gender = gender;
+        this.birthDate = birthDate;
     }
 
     public Customer() {
@@ -58,5 +63,13 @@ public class Customer {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 }
