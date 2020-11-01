@@ -2,14 +2,14 @@ package Models;
 
 public class Product {
 
-    private int id;
-    private String type;
+    private int idProduct;
+    private Type type;
     private int price;
     private String name;
     private int amount;
 
-    public Product(int id, String type, int price, String name, int amount) {
-        this.id = id;
+    public Product(int id, Type type, int price, String name, int amount) {
+        this.idProduct = id;
         this.type = type;
         this.price = price;
         this.name = name;
@@ -20,18 +20,18 @@ public class Product {
     }
 
     public int getId() {
-        return id;
+        return idProduct;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.idProduct = id;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
