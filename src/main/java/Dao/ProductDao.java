@@ -54,7 +54,7 @@ public class ProductDao {
         }
         session.close();
     }
-    public void deletePerson(Person savedUser) {
+    public void deleteProduct(Product savedUser) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
