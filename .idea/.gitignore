@@ -3,5 +3,6 @@
 /workspace.xml
 compiler.xml
 /target
-/.idea/
+.idea
+/resources/
 
