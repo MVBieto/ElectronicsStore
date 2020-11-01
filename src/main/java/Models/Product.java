@@ -1,5 +1,7 @@
 package Models;
 
+import Enums.Type;
+
 public class Product {
 
     private int idProduct;
