@@ -1,6 +1,5 @@
 package Dao;
 
-import Models.Customer;
 import Models.Order;
 import Util.Hibernate;
 import org.hibernate.Session;
