@@ -35,7 +35,7 @@ public class CustomerDao {
             return customer;
         } catch (Exception ex) {
             session.close();
-            System.out.println("Unable to find the product with id: " + customerId);
+            System.out.println("Unable to find the customer with id: " + customerId);
             ex.printStackTrace();
             return null;
         }
@@ -62,12 +62,12 @@ public class CustomerDao {
         session.close();
     }
 
-    public void deleteCustomer(Customer savedUser) {
+    public void deleteCustomer(Customer savedCustomer) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.delete(savedUser);
+            session.delete(savedCustomer);
             transaction.commit();
         } catch (Exception ex) {
             ex.printStackTrace();
