@@ -25,9 +25,9 @@ public class SalesManagerDao {
     public SalesManager getSalesManager(Long salesManagerId) {
         Session session = Hibernate.getSessionFactory().openSession();
         try {
-            SalesManager salesManager = session.find(SalesManager.class, salesManagerId);
+            SalesManager SM = session.find(SalesManager.class, salesManagerId);
             session.close();
-            return salesManager;
+            return SM;
         } catch (Exception ex) {
             session.close();
             System.out.println("Unable to find the SalesManager with id: "+ salesManagerId);
@@ -35,7 +35,7 @@ public class SalesManagerDao {
             return null;
         }
     }
-    public List<SalesManager> getSalesManager(){
+    public List<SalesManager> getSalesManagers(){
         Session session = Hibernate.getSessionFactory().openSession();
         return session.createQuery("from SalesManager", SalesManager.class).list();
     }
