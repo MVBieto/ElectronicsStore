@@ -1,17 +1,12 @@
 package Dao;
-
 import Models.Product;
-
 import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import Util.Hibernate;
-
 public class ProductDao {
     public ProductDao() {
     }
-
     public void createProduct(Product product) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -27,7 +22,6 @@ public class ProductDao {
         }
         session.close();
     }
-
     public Product getProduct(Long productId) {
         Session session = Hibernate.getSessionFactory().openSession();
         try {
@@ -36,17 +30,15 @@ public class ProductDao {
             return product;
         } catch (Exception ex) {
             session.close();
-            System.out.println("Unable to find the product with id: " + productId);
+            System.out.println("Unable to find the product with id: "+ productId);
             ex.printStackTrace();
             return null;
         }
     }
-
-    public List<Product> getProducts() {
+    public List<Product> getProducts(){
         Session session = Hibernate.getSessionFactory().openSession();
         return session.createQuery("from Product", Product.class).list();
     }
-
     public void updateProduct(Product savedProduct) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -62,13 +54,12 @@ public class ProductDao {
         }
         session.close();
     }
-
-    public void deleteProduct(Product savedUser) {
+    public void deleteProduct(Product savedProduct) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.delete(savedUser);
+            session.delete(savedProduct);
             transaction.commit();
         } catch (Exception ex) {
             ex.printStackTrace();
