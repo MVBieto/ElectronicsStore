@@ -1,11 +1,37 @@
 package Models;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(schema = "ElectronicStore", name = "Order")
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "orderId")
+    private int orderId;
+    @Column(name = "customerId")
     private int customerId;
+    @Column(name = "salesManagerId")
     private int salesManagerId;
+    @Column(name = "productId")
     private int productId;
+    @Column(name = "finalPrice")
     private int finalPrice;
+    @Column(name = "amount")
     private int amount;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at")
+    private Date createdAt;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "last_updated")
+    private Date lastUpdated;
 
     public Order(int customerId, int salesManagerId, int productId, int finalPrice, int amount) {
         this.customerId = customerId;
@@ -53,5 +79,28 @@ public class Order {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 }

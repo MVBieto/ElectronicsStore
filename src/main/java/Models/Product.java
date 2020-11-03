@@ -9,8 +9,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(schema = "ElectronicStore", name = "Product")
-
-
 public class Product {
 
     @Id
