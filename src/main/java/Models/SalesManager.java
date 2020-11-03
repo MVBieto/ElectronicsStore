@@ -3,20 +3,15 @@ package Models;
 import java.util.Date;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
 
 @Entity
 @Table(schema = "ElectronicStore", name = "SalesManager")
-
-
-
 public class SalesManager {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    @Column(name = "SalesManagerId")
+    private int salesManagerId;
     @Column(name = "firstName")
     private String firstName;
     @Column(name = "lastName")
@@ -32,9 +27,6 @@ public class SalesManager {
     @Column(name = "last_updated")
     private Date lastUpdated;
 
-
-
-
     public SalesManager(String firstName, String lastName, boolean isAvailable) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -45,11 +37,11 @@ public class SalesManager {
     }
 
     public int getId() {
-        return id;
+        return salesManagerId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.salesManagerId = id;
     }
 
     public String getFirstName() {
