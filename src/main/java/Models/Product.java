@@ -4,17 +4,15 @@ import Enums.Type;
 import java.util.Date;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
 
 @Entity
 @Table(schema = "ElectronicStore", name = "Product")
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idProduct")
-    private int idProduct;
+    @Column(name = "productId")
+    private int productId;
     @Column(name = "type")
     private Type type;
     @Column(name = "price")
@@ -32,7 +30,6 @@ public class Product {
     @Column(name = "last_updated")
     private Date lastUpdated;
 
-
     public Product(Type type, int price, String name, int amount) {
 
         this.type = type;
@@ -45,11 +42,11 @@ public class Product {
     }
 
     public int getId() {
-        return idProduct;
+        return productId;
     }
 
     public void setId(int id) {
-        this.idProduct = id;
+        this.productId = id;
     }
 
     public Type getType() {
@@ -83,15 +80,19 @@ public class Product {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
     public Date getCreatedAt() {
         return createdAt;
     }
+
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
     public Date getLastUpdated() {
         return lastUpdated;
     }
+
     public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
