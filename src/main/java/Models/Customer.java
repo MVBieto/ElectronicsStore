@@ -1,20 +1,40 @@
 package Models;
 
 import Enums.Gender;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table(schema = "ElectronicStore", name = "Customer")
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customerId")
     private int customerId;
+    @Column(name = "customerName")
     private String customerName;
+    @Column(name = "customerSurname")
     private String customerSurname;
+    @Column(name = "address")
     private String address;
+    @Column(name = "gender")
     private Gender gender;
+    @Column(name = "birthDate")
     private Date birthDate;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at")
+    private Date createdAt;
 
-    public Customer(int customerId, String customerName, String customerSurname, String address, Gender gender, Date birthDate) {
-        this.customerId = customerId;
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "last_updated")
+    private Date lastUpdated;
+
+    public Customer(String customerName, String customerSurname, String address, Gender gender, Date birthDate) {
         this.customerName = customerName;
         this.customerSurname = customerSurname;
         this.address = address;
@@ -71,5 +91,22 @@ public class Customer {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 }
