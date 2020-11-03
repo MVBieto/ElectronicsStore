@@ -13,11 +13,11 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderId")
     private int orderId;
-    @Column(name = "customerId")
+    @Column(name = "customerExtId")
     private int customerId;
-    @Column(name = "salesManagerId")
+    @Column(name = "salesManagerExtId")
     private int salesManagerId;
-    @Column(name = "productId")
+    @Column(name = "productExtId")
     private int productId;
     @Column(name = "finalPrice")
     private int finalPrice;

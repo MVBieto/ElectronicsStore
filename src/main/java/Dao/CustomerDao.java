@@ -7,12 +7,10 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class CustomerDao {
-
-    public CustomerDao() {
-    }
+    static Session session = Hibernate.getSessionFactory().openSession();
 
     public void createCustomer(Customer customer) {
-        Session session = Hibernate.getSessionFactory().openSession();
+//        Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
@@ -24,6 +22,10 @@ public class CustomerDao {
                 transaction.rollback();
             }
         }
+//        session.close();
+    }
+
+    public void shutDown() {
         session.close();
     }
 
