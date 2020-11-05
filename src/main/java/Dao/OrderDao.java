@@ -12,12 +12,12 @@ public class OrderDao {
     public OrderDao() {
     }
 
-    public void createOrder(Order order) {
+    public void createOrder(Order Order) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.save(order);
+            session.save(Order);
             transaction.commit();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -31,9 +31,9 @@ public class OrderDao {
     public Order getOrder(Long orderId) {
         Session session = Hibernate.getSessionFactory().openSession();
         try {
-            Order order = session.find(Order.class, orderId);
+            Order Order = session.find(Order.class, orderId);
             session.close();
-            return order;
+            return Order;
         } catch (Exception ex) {
             session.close();
             System.out.println("Unable to find the order with id: " + orderId);
