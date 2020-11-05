@@ -23,12 +23,12 @@ public class Hibernate {
             Configuration configuration = new Configuration();
             Properties properties = new Properties();
             properties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-            properties.put(Environment.URL, "jdbc:mysql://localhost:3306/users");
+            properties.put(Environment.URL, "jdbc:mysql://localhost:3306/electronicstore?createDatabaseIfNotExist=true&serverTimezone=UTC");
             properties.put(Environment.USER, applicationProperties.getString("dbUsername"));
             properties.put(Environment.PASS, applicationProperties.getString("dbPassword"));
             properties.put(Environment.SHOW_SQL, "true");
             properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
-//            properties.put(Environment.HBM2DDL_AUTO, "create-drop");
+            properties.put(Environment.HBM2DDL_AUTO, "create-drop");
             properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
             configuration.setProperties(properties);
             // all entities need to be registered

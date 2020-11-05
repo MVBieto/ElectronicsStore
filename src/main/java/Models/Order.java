@@ -2,12 +2,11 @@ package Models;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(schema = "ElectronicStore", name = "Order")
+@Table(schema = "ElectronicStore", name = "´Order´")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
