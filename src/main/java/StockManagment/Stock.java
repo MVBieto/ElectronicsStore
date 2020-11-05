@@ -1,5 +1,6 @@
 package StockManagment;
 
+import Dao.ProductDao;
 import Enums.Type;
 import Models.Product;
 
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class Stock {
 
-    public static List<Product> createBasicStock() {
+    public static void createBasicStock(ProductDao productManager) {
 
         List<Product> products = new ArrayList<>();
 
@@ -23,7 +24,18 @@ public class Stock {
         products.add(new Product(Type.SCOOTER, 600, "Sprint", 20));
         products.add(new Product(Type.SCOOTER, 900, "FlightEcoS", 50));
 
-        return products;
+        for (Product product:products) {
+            productManager.createProduct(product);
+        }
+    }
+
+    public static void cleanStock(ProductDao productManager)
+    {
+        List<Product> currentListOfProducts = productManager.getProducts();
+
+        for (Product product: currentListOfProducts) {
+            productManager.deleteProduct(product);
+        }
     }
 
 
