@@ -1,7 +1,7 @@
-package Dao;
+package dao;
 
-import Models.Order;
-import Util.Hibernate;
+import models.Order;
+import util.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

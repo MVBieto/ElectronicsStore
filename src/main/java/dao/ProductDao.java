@@ -1,18 +1,18 @@
-package Dao;
-import Models.SalesManager;
+package dao;
+import models.Product;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import Util.Hibernate;
-public class SalesManagerDao {
-    public SalesManagerDao() {
+import util.Hibernate;
+public class ProductDao {
+    public ProductDao() {
     }
-    public void createSalesManager(SalesManager salesManager) {
+    public void createProduct(Product product) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.save(salesManager);
+            session.save(product);
             transaction.commit();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -22,29 +22,29 @@ public class SalesManagerDao {
         }
         session.close();
     }
-    public SalesManager getSalesManager(Long salesManagerId) {
+    public Product getProduct(Long productId) {
         Session session = Hibernate.getSessionFactory().openSession();
         try {
-            SalesManager SM = session.find(SalesManager.class, salesManagerId);
+            Product product = session.find(Product.class, productId);
             session.close();
-            return SM;
+            return product;
         } catch (Exception ex) {
             session.close();
-            System.out.println("Unable to find the SalesManager with id: "+ salesManagerId);
+            System.out.println("Unable to find the product with id: "+ productId);
             ex.printStackTrace();
             return null;
         }
     }
-    public List<SalesManager> getSalesManagers(){
+    public List<Product> getProducts(){
         Session session = Hibernate.getSessionFactory().openSession();
-        return session.createQuery("from SalesManager", SalesManager.class).list();
+        return session.createQuery("from Product", Product.class).list();
     }
-    public void updateSalesManager(SalesManager savedSalesManager) {
+    public void updateProduct(Product savedProduct) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.update(savedSalesManager);
+            session.update(savedProduct);
             transaction.commit();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -54,12 +54,12 @@ public class SalesManagerDao {
         }
         session.close();
     }
-    public void deleteSalesManager(SalesManager savedSalesManager) {
+    public void deleteProduct(Product savedProduct) {
         Session session = Hibernate.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.delete(savedSalesManager);
+            session.delete(savedProduct);
             transaction.commit();
         } catch (Exception ex) {
             ex.printStackTrace();

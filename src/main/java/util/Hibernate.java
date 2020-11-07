@@ -1,11 +1,11 @@
-package Util;
+package util;
 
 import java.util.Properties;
 
-import Models.Customer;
-import Models.Order;
-import Models.Product;
-import Models.SalesManager;
+import models.Customer;
+import models.Order;
+import models.Product;
+import models.SalesManager;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

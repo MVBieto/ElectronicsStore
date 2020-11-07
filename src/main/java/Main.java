@@ -1,11 +1,11 @@
-import Dao.ProductDao;
-import Models.Product;
+import dao.ProductDao;
+import models.Product;
 
 import java.util.List;
 import java.util.Scanner;
 
-import static StockManagment.Stock.cleanStock;
-import static StockManagment.Stock.createBasicStock;
+import static stockManagement.Stock.cleanStock;
+import static stockManagement.Stock.createBasicStock;
 
 public class Main {
 

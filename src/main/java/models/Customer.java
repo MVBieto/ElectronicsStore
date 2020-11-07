@@ -1,6 +1,6 @@
-package Models;
+package models;
 
-import Enums.Gender;
+import enums.Gender;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 

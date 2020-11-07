@@ -1,8 +1,8 @@
-package StockManagment;
+package stockManagement;
 
-import Dao.ProductDao;
-import Enums.Type;
-import Models.Product;
+import dao.ProductDao;
+import enums.Type;
+import models.Product;
 
 import java.util.ArrayList;
 import java.util.List;
