@@ -10,13 +10,13 @@ import javax.persistence.*;
 public class SalesManager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SalesManagerId")
+    @Column(name = "Sales_Manager_Id")
     private int salesManagerId;
-    @Column(name = "firstName")
+    @Column(name = "first_Name")
     private String firstName;
-    @Column(name = "lastName")
+    @Column(name = "last_Name")
     private String lastName;
-    @Column(name = "isAvailable")
+    @Column(name = "is_Available")
     private boolean isAvailable;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)

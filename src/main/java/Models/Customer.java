@@ -11,17 +11,17 @@ import java.util.Date;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customerId")
+    @Column(name = "customer_Id")
     private int customerId;
-    @Column(name = "customerName")
+    @Column(name = "customer_Name")
     private String customerName;
-    @Column(name = "customerSurname")
+    @Column(name = "customer_Surname")
     private String customerSurname;
     @Column(name = "address")
     private String address;
     @Column(name = "gender")
     private Gender gender;
-    @Column(name = "birthDate")
+    @Column(name = "birth_Date")
     private Date birthDate;
 
     @CreationTimestamp

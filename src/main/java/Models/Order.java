@@ -10,15 +10,15 @@ import java.util.Date;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "orderId")
+    @Column(name = "order_Id")
     private int orderId;
-    @Column(name = "customerId")
+    @Column(name = "customer_Id")
     private int customerId;
-    @Column(name = "salesManagerId")
+    @Column(name = "salesManager_Id")
     private int salesManagerId;
-    @Column(name = "productId")
+    @Column(name = "product_Id")
     private int productId;
-    @Column(name = "finalPrice")
+    @Column(name = "final_Price")
     private int finalPrice;
     @Column(name = "amount")
     private int amount;
