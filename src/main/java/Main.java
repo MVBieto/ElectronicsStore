@@ -20,10 +20,6 @@ public class Main {
         System.out.println("Please, make a choice for our DATABASE, select GET, START, DELETE or FINISH");
         userInput = scan.next();
 
-        /* Requires a validator of the text input by the client */
-
-
-        /* Requires a while statement to keep asking the client what option does the client want to do*/
         while (true) {
             while((userInput==null)||(!(userInput.equals("GET")||userInput.equals("START")||(userInput.equals("DELETE")||(userInput.equals("FINISH")))))) {
                 System.out.println("Please, make a choice for our DATABASE, select GET, START, DELETE or FINISH");
