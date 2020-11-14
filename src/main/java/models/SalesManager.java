@@ -36,7 +36,7 @@ public class SalesManager {
     public SalesManager() {
     }
 
-    public int getId() {
+    public int getSalesManagerId() {
         return salesManagerId;
     }
 
