@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.Hibernate;
 public class ProductDao {
+
     public ProductDao() {
     }
     public void createProduct(Product product) {
