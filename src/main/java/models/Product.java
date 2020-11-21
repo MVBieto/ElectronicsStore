@@ -96,4 +96,17 @@ public class Product {
     public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", type=" + type +
+                ", price=" + price +
+                ", name='" + name + '\'' +
+                ", amount=" + amount +
+                ", createdAt=" + createdAt +
+                ", lastUpdated=" + lastUpdated +
+                '}';
+    }
 }
